@@ -8,7 +8,7 @@ const Userdetail = () => {
     const [gender,setgender]=useState("")
     const [age,setAge]=useState("")
     useEffect(()=>{
-        axios.get(`http://localhost:8080/userdetail?page=${page}&limit=10&gender=${gender}&age=${age}`).then(res=>setData(res.data))
+        axios.get(`https://gorgeous-bathing-suit.cyclic.app/userdetail?page=${page}&limit=10&gender=${gender}&age=${age}`).then(res=>setData(res.data))
     },[page,gender,age])
     const coloumn=[
         {heading:"Picture"},
@@ -28,7 +28,7 @@ const Userdetail = () => {
 <option value="greater">Age greater than 50</option>
 <option value="lesser">Age lesser than 50</option></select>
      <Userinfo data={data} coloumn={coloumn}/>
-     <button disabled={page===1? true: false}onClick={()=>setPage(page-1)}>Prev</button>{page}<button onClick={()=>setPage(page+1)}>Next</button>
+     <button disabled={page===1? true: false}onClick={()=>setPage(page-1)}>Prev</button>{page}<button disabled={page===5? true: false} onClick={()=>setPage(page+1)}>Next</button>
      </div>
   )
 }

@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { Link } from 'react-router-dom'
 const handlefetch=async ()=>{
-  await axios.get("http://localhost:8080").then(res=>{if(res.data=="sorry ,data already exist"){
+  await axios.get("https://gorgeous-bathing-suit.cyclic.app").then(res=>{if(res.data=="sorry ,data already exist"){
     alert("sorry ,Users already exist")
   }
 else{
@@ -10,7 +10,7 @@ else{
 }}).catch(e=>alert(e.message))
 }
 const handledelete=async()=>{
-await axios.delete("http://localhost:8080/deleted").then(res=>{if(res.data.deletedCount===0){
+await axios.delete("https://gorgeous-bathing-suit.cyclic.app/deleted").then(res=>{if(res.data.deletedCount===0){
   alert("Users do not exist").catch(e=>alert(e.message))
 }
 else{
